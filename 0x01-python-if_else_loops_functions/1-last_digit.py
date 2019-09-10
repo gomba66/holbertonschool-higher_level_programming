@@ -9,7 +9,7 @@ else:
 
 if number == 0:
     print("is", number, "and is 0")
-elif number < 0:
-    print("is", number, "and is less than 6 and not 0")
+elif number > 5:
+    print("is", number, "and is greather than 5")
 else:
     print("is", number, "and is less than 6 and not 0")
