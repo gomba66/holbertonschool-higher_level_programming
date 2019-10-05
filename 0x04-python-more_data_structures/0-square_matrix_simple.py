@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    new = []
+    new_matrix = []
     for x in range(0, len(matrix)):
-        new.append(['0']*len(matrix))
-    for i in range(len(matrix)):
-        for j in range(len(matrix)):
-            new[i][j] = matrix[i][j] ** 2
-    return new
+        new_matrix.append([])
+        for y in range(0, len(matrix)):
+            new_matrix[x].append((matrix[x][y] ** 2))
+
+    return new_matrix
