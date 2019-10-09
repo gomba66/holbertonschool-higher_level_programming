@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
+    if matrix == None:
+        return
     new_matrix = []
-    for x in range(0, len(matrix)):
-        new_matrix.append([])
-        for y in range(0, len(matrix)):
-            new_matrix[x].append((matrix[x][y] ** 2))
-
+    for x in matrix:
+        ele = list(map((lambda x: x ** 2), x))
+        new_matrix.append(ele)
     return new_matrix
