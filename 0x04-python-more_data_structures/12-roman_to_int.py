@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-
+    if roman_string is None or roman_string is not str:
+        return 0
     M, D, C, L, X, V, I = 1000, 500, 100, 50, 10, 5, 1
     total2 = 0
     new_list = []
