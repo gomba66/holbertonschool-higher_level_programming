@@ -15,6 +15,11 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def __str__(self):
+        m = '[Rectangle] ({}) {}/{} - {}/{}'.\
+            format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return m
+
     @property
     def width(self):
         """ Method width for retrieve the value """
