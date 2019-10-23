@@ -1,0 +1,49 @@
+The "0-add_integer" module
+==========================
+
+Using "add_integer"
+------------------
+
+First we need to import the module.
+
+      >>> add_integer = __import__('0-add_integer').add_integer
+
+Case 1: Adding 1 and 2:
+     >>> add_integer(1, 2)
+     3
+
+Case 2: Adding 100 and 0:
+     >>> add_integer(100, 0)
+     100
+
+Case 3: Adding -80 and 80:
+     >>> add_integer(-80, 80)
+     0
+
+Case 4: Adding 100.3 and 89:
+     >>> add_integer(100.3, 89)
+     189
+
+Case 5: Adding 100 and -2:
+     >>> add_integer(100, -2)
+     98
+
+Case 6: Adding just one integer (2):
+     >>> add_integer(2)
+     100
+
+Case 7: Adding 100.3 and -2:
+     >>> add_integer(100.3, -2)
+     98
+
+Case 8: Passing not integers "Betty" and "holberton":
+     >>> add_integer("Betty", "Holberton")
+     Traceback (most recent call last):
+     ...
+     TypeError: a must be an integer
+
+Case 9: Passing a number and a string, 98 and "Street"
+     >>> add_integer(2, "Street")
+     Traceback (most recent call last):
+     ...
+     TypeError: b must be an integer
