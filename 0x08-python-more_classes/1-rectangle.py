@@ -20,7 +20,6 @@ class Rectangle:
     def height(self):
         return self.__height
 
-
     @height.setter
     def height(self, value):
         if type(value) != int:
