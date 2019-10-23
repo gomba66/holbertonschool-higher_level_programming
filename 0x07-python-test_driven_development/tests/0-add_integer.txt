@@ -47,9 +47,3 @@ Case 9: Passing a number and a string, 98 and "Street"
      Traceback (most recent call last):
      ...
      TypeError: b must be an integer
-
-Case 10: Passing more than 2 arguments
-     >>> add_integer(a = 2,3)
-     Traceback (most recent calllast):
-     ...
-     SyntaxError: positional argument follows keyword argument
