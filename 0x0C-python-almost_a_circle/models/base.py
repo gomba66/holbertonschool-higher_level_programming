@@ -10,6 +10,6 @@ class Base:
         """ Special method that inicialize all atributes """
         if id is None:
             Base.__nb_objects = Base.__nb_objects + 1
-            self.id = self.__nb_objects
+            self.id = Base.__nb_objects
         else:
             self.id = id
