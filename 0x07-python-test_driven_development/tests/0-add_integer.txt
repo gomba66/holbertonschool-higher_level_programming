@@ -47,3 +47,24 @@ Case 9: Passing a number and a string, 98 and "Street"
      Traceback (most recent call last):
      ...
      TypeError: b must be an integer
+
+Case Overflow:
+
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    	            ...
+    OverflowError: cannot convert float infinity to integer
+
+Case Overflow 2:
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    	            ...
+    OverflowError: cannot convert float infinity to integer
+
+Case NaN:
+
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    	            ...
+    ValueError: cannot convert float NaN to integer
