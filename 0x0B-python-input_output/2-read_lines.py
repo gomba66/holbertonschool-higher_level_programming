@@ -4,5 +4,7 @@ def read_lines(filename='', nb_lines=0):
         if nb_lines != 0:
             for x in range(nb_lines):
                 print(f.readline(), end='')
+        elif nb_lines < 0:
+            print()
         else:
             print(f.read(), end='')
