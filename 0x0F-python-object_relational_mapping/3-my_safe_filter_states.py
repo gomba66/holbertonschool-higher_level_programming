@@ -2,7 +2,7 @@
 """
 This module contains a code for to connect to a database and ask for query
 """
-import sys
+from sys import argv
 import MySQLdb
 
 
