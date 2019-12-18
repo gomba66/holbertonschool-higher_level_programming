@@ -4,7 +4,10 @@ This module contains a code for to connect to a database and ask for query
 """
 import sys
 import MySQLdb
+
+
 if __name__ == '__main__':
+    # Conection to the database
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=sys.argv[1],
