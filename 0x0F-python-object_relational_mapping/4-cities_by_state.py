@@ -10,15 +10,16 @@ if __name__ == "__main__":
                          user=sys.argv[1],
                          passwd=sys.argv[2],
                          db=sys.argv[3])
-    cur = db.cursor()
 
-    cur.execute("SELECT * FROM states\
-    WHERE name LIKE %s ORDER BY id ASC;", (sys.argv[4],))
+    cursor = db.cursor()
 
-    query = cur.fetchall()
+    cursor.execute("SELECT cities.id, cities.name, cities.state_id FROM cities\
+    JOIN states ON states.id = cities.state_id ORDER BY cities.id ASC;")
+    
+    tables = cursor.fetchall()
 
-    for row in query:
-        print(row)
+    for column in tables:
+        print(column)
 
     cursor.close()
     db.close()
