@@ -13,7 +13,6 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    # Execute the query and return to the cursor also prevent sql inj
     cur.execute("SELECT cities.name FROM cities LEFT JOIN states\
     ON states.id = cities.state_id WHERE states.name = %s\
     ORDER BY cities.id ASC;", (sys.argv[4],))
