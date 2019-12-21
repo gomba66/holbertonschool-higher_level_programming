@@ -10,8 +10,9 @@ from sqlalchemy.orm import sessionmaker
 
 def main():
     """ Connect and Read Data Base """
-    db = 'mysql+mysqldb://{}:{}@localhost/{}'.format(
-          sys.argv[1], sys.argv[2], sys.argv[3], pool_pre_ping=True)
+    db = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
+                                                     sys.argv[2], sys.argv[3],
+                                                     pool_pre_ping=True)
 
     engine = create_engine(db)
     Base.metadata.create_all(engine)
