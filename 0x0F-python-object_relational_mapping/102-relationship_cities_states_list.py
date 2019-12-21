@@ -18,10 +18,10 @@ def main():
 
     session = sessionmaker(bind=engine)()
 
-    relation = State(name='California')
-    relation.cities.append(City(name='San Francisco'))
-    session.add(relation)
-    session.commit()
+    records = session.query(City)
+
+    for record in records:
+        print('{}: {} -> {}'.format(record.id, record.name, record.state.name))
 
     session.close()
 
