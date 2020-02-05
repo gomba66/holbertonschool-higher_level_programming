@@ -7,5 +7,5 @@ if (process.argv.length < 3) {
   while (i < number) {
     console.log('C is fun');
     i++;
-}
+  }
 }
