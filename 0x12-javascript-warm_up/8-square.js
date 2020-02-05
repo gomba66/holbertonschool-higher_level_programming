@@ -1,7 +1,11 @@
 #!/usr/bin/node
+let test = parseInt(process.argv[2]);
 if (process.argv.length === 2) {
   console.log('Missing size');
-} else {
+} else if (!test) {
+    console.log('Missing size');
+}
+else {
   let x = 0;
   let y = 0;
   const character = 'X';
