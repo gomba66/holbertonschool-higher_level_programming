@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 """
-This module contains a program that sends
-a POST request to the URL with an email address
+Script that takes your Github credentials
+and uses the Github API to display your id
 """
-import requests
-import sys
+if __name__ == '__main__':
+    import requests
+    from requests.auth import HTTPBasicAuth
+    from sys import argv
 
-if __name__ == "__main__":
-    pass
+    req = requests.get('https://api.github.com/users/{}'.format(argv[1]),
+                       auth=HTTPBasicAuth(argv[1], argv[2]))
+    print(req.json().get('id'))
