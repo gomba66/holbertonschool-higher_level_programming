@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
-This module contains a program that sends
-a POST request to the URL with an email address
+fetches with requests library https://intranet.hbtn.io/status
 """
-import requests
-import sys
-
-if __name__ == "__main__":
-    pass
+if __name__ == '__main__':
+    import requests
+    req = requests.get('https://intranet.hbtn.io/status')
+    text = req.text
+    print("Body response:")
+    print("\t- type: {}".format(type(text)))
+    print("\t- content: {}".format(text))
