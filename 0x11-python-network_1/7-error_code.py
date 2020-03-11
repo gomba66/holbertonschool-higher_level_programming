@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 """
-This module contains a program that sends
-a POST request to the URL with an email address
+script that takes in a URL, sends a request to the
+URL and displays the body of the response
 """
-import requests
-import sys
+if __name__ == '__main__':
+    import requests
+    from sys import argv
 
-if __name__ == "__main__":
-    pass
+    req = requests.get(argv[1])
+    if req.status_code >= 400:
+        print("Error code: {}".format(req.status_code))
+    else:
+        print(req.text)#!/usr/bin/python3
