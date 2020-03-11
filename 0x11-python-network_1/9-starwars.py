@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 """
-This module contains a program that sends
-a POST request to the URL with an email address
+Script that takes in a string and sends a search request to the Star Wars API
 """
-import requests
-import sys
+if __name__ == '__main__':
+    import requests
+    from sys import argv
 
-if __name__ == "__main__":
-    pass
+    req = requests.get('https://swapi.co/api/people',
+                       params={'search': argv[1]})
+    charac = req.json()
+    print("Number of results: {}".format(charac.get('count')))
+    for person in charac.get('results'):
+        print(person.get('name'))
