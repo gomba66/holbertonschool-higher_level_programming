@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 """
-This module contains a program that sends
-a POST request to the URL with an email address
+script that takes in a URL, sends a request to the URL
+and displays the value of the variable X-Request-Id
+in the response header.
+With the requests library
 """
-import requests
-import sys
+if __name__ == '__main__':
+    import requests
+    from sys import argv
 
-if __name__ == "__main__":
-    pass
+    req = requests.get(argv[1])
+    print(req.headers.get('X-Request-Id'))
