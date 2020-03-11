@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 """
-This module contains a program that print
-the error messages of the http request
+script that takes in a URL, sends a request to the URL
+and displays the body of the response (decoded in utf-8)
 """
-import urllib.request
-import sys
-import urllib.error
-
 if __name__ == "__main__":
+    import urllib.error as error
+    import urllib.request as request
+    from sys import argv
+
+    req = request.Request(argv[1])
     try:
-        with urllib.request.urlopen(sys.argv[1]) as f:
-            html = f.read().decode()
-            print(html)
-    except urllib.error.HTTPError as error:
-        error = error.code
-        print("Error code: {}".format(error))
+        with request.urlopen(req) as r:
+            print(r.read().decode('utf-8'))
+    except error.HTTPError as e:
+        print("Error code: {}".format(e.code))
